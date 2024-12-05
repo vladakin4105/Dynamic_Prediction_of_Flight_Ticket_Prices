@@ -63,7 +63,7 @@
     </div>
 
     <div class="data-container">
-      <p>Please insert your travel informations below:</p>
+      <p>Please insert your travel details below:</p>
       <form class="formular">
         <div class="input">
           <label for="origin">From</label>
@@ -79,6 +79,17 @@
             type="date"
             id="departure-date"
             name="departure-date"
+            onfocus="this.removeAttribute('value');"
+            required
+            min=""
+          />
+        </div>
+        <div class="input">
+          <label for="return-date">Return date</label>
+          <input
+            type="date"
+            id="return-date"
+            name="return-date"
             onfocus="this.removeAttribute('value');"
             required
             min=""
