@@ -9,12 +9,9 @@
   <body>
     <header>
       <nav class="navbar">
-        <img
-          src="assets/logo-removebg-preview.png"
-          alt=""
-          href="home.html"
-          class="logo"
-        />
+        <a href="home.html">
+          <img src="assets/logo-removebg-preview.png" alt="" class="logo"
+        /></a>
         <ul class="sidebar">
           <li onclick="closeSidebar()">
             <a href="#"
@@ -57,6 +54,41 @@
         </ul>
       </nav>
     </header>
+
+    <div class="title">
+      <h1>Buy your ticket</h1>
+      <div class="scrolling-text">
+        <p>Find your best flight on our website</p>
+      </div>
+    </div>
+
+    <div class="data-container">
+      <p>Please insert your travel informations below:</p>
+      <form class="formular">
+        <div class="input">
+          <label for="origin">From</label>
+          <input type="text" id="origin" name="origin" required />
+        </div>
+        <div class="input">
+          <label for="origin">To</label>
+          <input type="text" id="destination" name="destination" required />
+        </div>
+        <div class="input">
+          <label for="departure-date">Departure date</label>
+          <input
+            type="date"
+            id="departure-date"
+            name="departure-date"
+            onfocus="this.removeAttribute('value');"
+            required
+            min=""
+          />
+        </div>
+        <div class="input-search">
+          <input type="submit" id="submit-button" value="Search" required />
+        </div>
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

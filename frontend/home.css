@@ -15,12 +15,12 @@ body {
 
 /* Logo styling */
 .logo {
-  height: 70px; /* Înălțimea logo-ului */
-  width: auto; /* Păstrează proporțiile */
-  margin-right: 20px; /* Spațiu între logo și meniul de navigare */
-  display: inline-block; /* Asigură poziționarea corectă */
-  object-fit: contain; /* Asigură că imaginea rămâne clară */
-  transform: rotate(45deg); /* Rotește imaginea cu 45 de grade */
+  height: 70px; /* Logo height */
+  width: auto; /* Keeps the proportions */
+  margin-right: 20px; /* Space between logo and the navigation menu */
+  display: inline-block; /* Ensures correct positioning */
+  object-fit: contain; /* Ensures the image stays clear */
+  transform: rotate(45deg); /* Rotates the image by 45 degrees */
   transition: transform 0.3s ease;
 }
 
@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #23b5ea;
+  color: #0f417e;
 }
 
 /* Burger menu */
@@ -66,12 +66,12 @@ nav a:hover {
 .burger .line {
   width: 25px;
   height: 3px;
-  background: #23b5ea;
+  background: #0f417e;
   margin: 4px;
   transition: 0.3s;
 }
 
-/* Sidebar (menu lateral) */
+/* Sidebar (side menu) */
 .sidebar {
   position: fixed;
   top: 0;
@@ -103,14 +103,118 @@ nav a:hover {
 }
 
 .sidebar a:hover {
-  background-color: #23b5ea;
+  background-color: #0f417e;
   color: white;
 }
 
-/* Responsivitate pentru meniul burger */
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 60vh; /* Height is 80% of the viewport height */
+  text-align: center; /* Centers text horizontally */
+}
+
+/* Styling for h1 */
+.title h1 {
+  font-size: 10vw; /* Font size based on viewport width */
+  font-weight: bold;
+  color: #0f417e; /* Text color */
+}
+
+/* Styling for the scrolling text */
+.scrolling-text {
+  width: 100%; /* Ensures text takes up full width */
+  overflow: hidden; /* Hides text that goes outside the container */
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
+  margin-top: 20px; /* Adds space between the title and scrolling text */
+}
+
+.scrolling-text p {
+  display: inline-block;
+  font-size: 20px;
+  color: #555; /* Lighter color for the moving text */
+  animation: scroll-text 10s linear infinite; /* Animates the text */
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  text-align: center;
+}
+
+.data-container p {
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: black;
+}
+
+.formular {
+  display: flex;
+  flex-wrap: wrap; /* Allows elements to wrap onto new lines if needed */
+  gap: 20px; /* Adds space between elements */
+  justify-content: space-between; /* Ensures even distribution of elements */
+  align-items: center; /* Vertical alignment */
+  font-family: Arial, sans-serif;
+}
+
+.formular label {
+  font-size: 14px; /* Smaller font size for labels */
+  width: 120px; /* Fixed width for labels */
+  font-weight: bold;
+}
+
+.formular .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  text-align: center;
+  gap: 10px;
+}
+
+.formular input {
+  width: 200px; /* Fixed width for input fields */
+  padding: 8px; /* Padding for input fields */
+  margin-bottom: 15px; /* Space below input fields */
+  border: 1px solid #0f417e; /* Border for the fields */
+  border-radius: 50px; /* Rounded corners */
+}
+
+.formular .input-search input {
+  background-color: #0f417e;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 15%;
+  width: 80px;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.formular .input-search input:hover {
+  background-color: #566e8a;
+}
+
+/* Animation for the moving text */
+@keyframes scroll-text {
+  0% {
+    transform: translateX(-350%); /* Starts from the right */
+  }
+  100% {
+    transform: translateX(350%); /* Moves to the left */
+  }
+}
+
+/* Responsiveness for burger menu */
 @media screen and (max-width: 768px) {
   .logo {
-    height: 50px; /* Logo mai mic pe ecrane mici */
+    height: 50px; /* Smaller logo on small screens */
   }
 
   .hideOnMobile {
