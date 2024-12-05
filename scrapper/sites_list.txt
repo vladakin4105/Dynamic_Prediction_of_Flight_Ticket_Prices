@@ -1,0 +1,34 @@
+Airline Websites:
+American Airlines - https://www.aa.com
+Delta Airlines - https://www.delta.com
+United Airlines - https://www.united.com
+Southwest Airlines - https://www.southwest.com
+JetBlue Airways - https://www.jetblue.com
+Alaska Airlines - https://www.alaskaair.com
+Air Canada - https://www.aircanada.com
+British Airways - https://www.britishairways.com
+Lufthansa - https://www.lufthansa.com
+Qatar Airways - https://www.qatarairways.com
+Singapore Airlines - https://www.singaporeair.com
+Emirates - https://www.emirates.com
+Ryanair - https://www.ryanair.com
+easyJet - https://www.easyjet.com
+KLM Royal Dutch Airlines - https://www.klm.com
+
+
+Flight Aggregator and Booking Websites
+Google Flights - https://www.google.com/flights
+Skyscanner - https://www.skyscanner.com
+Kayak - https://www.kayak.com
+Expedia - https://www.expedia.com
+Orbitz - https://www.orbitz.com
+Priceline - https://www.priceline.com
+CheapOair - https://www.cheapoair.com
+Momondo - https://www.momondo.com
+Travelocity - https://www.travelocity.com
+Hopper - https://www.hopper.com
+Kiwi.com - https://www.kiwi.com
+Trip.com - https://www.trip.com
+FareCompare - https://www.farecompare.com
+Booking.com Flights - https://www.booking.com/flights
+Flights.com - https://www.flights.com
