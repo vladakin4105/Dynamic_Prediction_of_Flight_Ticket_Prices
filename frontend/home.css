@@ -58,20 +58,6 @@ nav a:hover {
   color: #0f417e;
 }
 
-/* Burger menu */
-.burger {
-  display: none;
-  cursor: pointer;
-}
-
-.burger .line {
-  width: 25px;
-  height: 3px;
-  background: #0f417e;
-  margin: 4px;
-  transition: 0.3s;
-}
-
 /* Sidebar (side menu) */
 .sidebar {
   position: fixed;
@@ -200,6 +186,43 @@ nav a:hover {
 
 .formular .input-search input:hover {
   background-color: #566e8a;
+}
+
+.footer {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .links {
+  padding: 20px;
+}
+
+.footer .links a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icons {
+  display: flex;
+  justify-content: center; /* Opțional: poziționare pe mijloc */
+  gap: 16px; /* Spațiu între iconițe */
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.icons a {
+  text-decoration: none; /* Elimină sublinierea link-urilor */
+  color: inherit; /* Menține culoarea din SVG */
+}
+
+.copyright {
+  margin-bottom: 20px;
 }
 
 /* Animation for the moving text */
