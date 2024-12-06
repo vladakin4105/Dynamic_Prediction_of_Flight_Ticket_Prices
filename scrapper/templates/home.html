@@ -12,9 +12,9 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="scrapper/templates/home.html">
+        <a href="{{ url_for('home') }}">
           <img
-            src="static/images/logo-removebg-preview.png"
+            src="{{ url_for('static', filename='images/logo-removebg-preview.png') }}"
             alt=""
             class="logo"
         /></a>
@@ -33,16 +33,22 @@
                 /></svg
             ></a>
           </li>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
         <ul>
-          <li class="hideOnMobile"><a href="home.html">Home</a></li>
-          <li class="hideOnMobile"><a href="about.html">About</a></li>
-          <li class="hideOnMobile"><a href="services.html">Services</a></li>
-          <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+          <li class="hideOnMobile"><a href="{{ url_for('home') }}">Home</a></li>
+          <li class="hideOnMobile">
+            <a href="{{ url_for('about') }}">About</a>
+          </li>
+          <li class="hideOnMobile">
+            <a href="{{ url_for('services') }}">Services</a>
+          </li>
+          <li class="hideOnMobile">
+            <a href="{{ url_for('contact') }}">Contact</a>
+          </li>
           <li onclick="showSidebar()">
             <a href="#"
               ><svg
@@ -109,10 +115,10 @@
 
     <footer class="footer">
       <div class="links">
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
       </div>
       <div class="icons">
         <a href="facebook.com"
@@ -174,6 +180,6 @@
       </div>
       <p class="copyright">© 2024 SomeCompany, Inc. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
