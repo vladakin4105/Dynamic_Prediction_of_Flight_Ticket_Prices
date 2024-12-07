@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="static/css/contact.css" />
     <title>Contact</title>
   </head>
   <body>
     <nav class="navbar">
         <a href="home.html">
-          <img src="assets/logo-removebg-preview.png" alt="" class="logo"
+          <img src="static/images/logo-removebg-preview.png" alt="" class="logo"
         /></a>
         <ul class="sidebar">
           <li onclick="closeSidebar()">
@@ -26,16 +26,22 @@
                 /></svg
             ></a>
           </li>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
         <ul>
-          <li class="hideOnMobile"><a href="home.html">Home</a></li>
-          <li class="hideOnMobile"><a href="about.html">About</a></li>
-          <li class="hideOnMobile"><a href="services.html">Services</a></li>
-          <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+           <li class="hideOnMobile"><a href="{{ url_for('home') }}">Home</a></li>
+          <li class="hideOnMobile">
+            <a href="{{ url_for('about') }}">About</a>
+          </li>
+          <li class="hideOnMobile">
+            <a href="{{ url_for('services') }}">Services</a>
+          </li>
+          <li class="hideOnMobile">
+            <a href="{{ url_for('contact') }}">Contact</a>
+          </li>
           <li onclick="showSidebar()">
             <a href="#"
               ><svg
@@ -104,7 +110,7 @@
   </div>
 </div>
 
-<footer class = "footer">
+    <footer class = "footer">
   <div class = "links">
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
@@ -134,6 +140,6 @@
   </p>
 </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
