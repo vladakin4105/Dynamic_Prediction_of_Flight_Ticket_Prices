@@ -1,0 +1,51 @@
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* Container */
+.construction-container {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  height: 25px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.progress {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 25px;
+  transition: width 0.4s ease;
+  animation: fillProgress 2s ease-in-out;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 70%; /* Replace with your progress */
+  }
+}
