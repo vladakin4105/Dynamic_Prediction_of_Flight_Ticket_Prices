@@ -6,3 +6,6 @@ aplicatie incorporata in site -- cea mai importanta , sa contina elementele de m
 detalii:
 prezentarea dureaza aprox 10 min in care spunem despre aplicatie
 
+requirements: //nu se ruleaza drept root!!
+apt install chromium-browser chromium-chromedriver
+
