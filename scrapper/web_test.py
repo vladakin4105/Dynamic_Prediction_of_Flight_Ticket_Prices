@@ -6,8 +6,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from bs4 import BeautifulSoup
 import time
+import csv
 
 # Configure Chromium WebDriver
 chrome_options = Options()
@@ -15,7 +16,7 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 # Path to Chromium WebDriver (installed as `chromium-chromedriver`)
-driver = webdriver.Chrome(service=Service("/usr/bin/chromedriver"), options=chrome_options)
+driver = webdriver.Chrome(service=Service("/opt/homebrew/bin/chromedriver"), options=chrome_options)
 
 # Open Chromium, wait 5 seconds, and then close it
 try:
@@ -65,7 +66,7 @@ try:
     
     time.sleep(0.5)
     
-    to_location = input("destination: ")
+    to_location = input("to_location: ")
     input_to = driver.find_element(By.XPATH, '//input[@aria-label="Where to? "]')
     input_to.clear()  # Clear any pre-filled text
     input_to.send_keys(to_location)
@@ -107,14 +108,46 @@ try:
     #javascript code -->nu modifica
     #problema principala porneste de la faptul ca este un date picker dinamic care impune si ce date sa fie folosite si modifica in timp real arhitectura html ului
     #facand dificila cautarea dupa content/atribute
-    #
-    #
-    #
+    try:
+        departure_date = input("departure_date(format zz-mm-yyyy): ")
+        input_departure_date = driver.find_element(By.XPATH,'//input[@aria-label="Departure"]')
+        input_departure_date.clear()
+        input_departure_date.send_keys(departure_date)
+        input_departure_date.send_keys(Keys.ENTER)
+        print(f'Entered "{departure_date}"')
+        time.sleep(1)
+    except Exception as e:
+        print("Eroare la introducerea datei de plecare:", e)
+
+    time.sleep(1)
+
+    try:
+        return_date = input("return_date(format zz-mm-yyyy): ")
+        input_return_date = driver.find_element(By.XPATH,'//input[@aria-label="Return"]')
+        input_return_date.clear()
+        input_return_date.send_keys(return_date)
+        input_return_date.send_keys(Keys.ENTER)
+        print(f'Entered "{return_date}"')
+        time.sleep(1)
+    except Exception as e:
+        print("Eroare la introducerea datei de întoarcere:", e)
     
-    time.sleep(1)        
+    time.sleep(1)    
+
+    try:
+        search_button = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//span[@jsname="V67aGc" and text()="Search"]'))
+        )
+        search_button.click()
+        print("Search button found and clicked.")
+    except Exception as e:
+        print("Error finding or clicking the search button:", e)
+
+    #toate zborurile sunt intr-o lista unde fiecare element are clasa "pIav2d"
     time.sleep(5)  # Wait to observe changes
     
     time.sleep(3600)
 finally:
     driver.quit()
     print("Chromium closed.")
+
