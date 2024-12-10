@@ -109,7 +109,7 @@ try:
     #problema principala porneste de la faptul ca este un date picker dinamic care impune si ce date sa fie folosite si modifica in timp real arhitectura html ului
     #facand dificila cautarea dupa content/atribute
     try:
-        departure_date = input("departure_date(format zz-mm-yyyy): ")
+        departure_date = input("departure_date(format dd-mm-yyyy): ")
         input_departure_date = driver.find_element(By.XPATH,'//input[@aria-label="Departure"]')
         input_departure_date.clear()
         input_departure_date.send_keys(departure_date)
@@ -122,7 +122,7 @@ try:
     time.sleep(1)
 
     try:
-        return_date = input("return_date(format zz-mm-yyyy): ")
+        return_date = input("return_date(format dd-mm-yyyy): ")
         input_return_date = driver.find_element(By.XPATH,'//input[@aria-label="Return"]')
         input_return_date.clear()
         input_return_date.send_keys(return_date)
