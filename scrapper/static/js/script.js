@@ -30,3 +30,26 @@ function sendMail() {
   // Redirecționează către link-ul mailto
   window.location.href = mailtoLink;
 }
+
+function showLoadingBar(event) {
+  event.preventDefault(); // Prevent form submission for demo purposes
+  document.querySelector(".formular").style.display = "none";
+  const loadingBarContainer = document.getElementById("loading-bar-container");
+  const loadingPercentage = document.getElementById("loading-percentage");
+  loadingBarContainer.style.display = "block";
+
+  let progress = 0;
+  const interval = setInterval(() => {
+    if (progress >= 100) {
+      clearInterval(interval);
+      loadingPercentage.textContent = "Completed!";
+      // Simulate actual form submission or next steps
+      setTimeout(() => {
+        console.log("Form processing complete.");
+      }, 500);
+    } else {
+      progress += 1;
+      loadingPercentage.textContent = `${progress}%`;
+    }
+  }, 20);
+}

@@ -20,7 +20,7 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 def app_data_scrap(buff,times,from_location,to_location,departure_date,return_date):
     
     # Path to Chromium WebDriver (installed as `chromium-chromedriver`)
-    driver = webdriver.Chrome(service=Service("/usr/bin/chromedriver"), options=chrome_options)
+    driver = webdriver.Chrome(service=Service("/opt/homebrew/bin/chromedriver"), options=chrome_options)
 
     # Open Chromium, wait 5 seconds, and then close it
     time.sleep(0.2)

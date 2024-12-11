@@ -7,6 +7,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/home.css') }}"
     />
+    <script
+      src="{{ url_for('static', filename='js/script.js') }}"
+      defer
+    ></script>
     <title>Flight Ticket Price Predictor</title>
   </head>
   <body>
@@ -76,7 +80,7 @@
 
     <div class="data-container">
       <p>Please insert your travel details below:</p>
-      <form class="formular">
+      <form class="formular" onsubmit="showLoadingBar(event)">
         <div class="input">
           <label for="origin">From</label>
           <input type="text" id="origin" name="origin" required />
@@ -111,6 +115,12 @@
           <input type="submit" id="submit-button" value="Search" required />
         </div>
       </form>
+    </div>
+
+    <div class="loading-bar-container" id="loading-bar-container">
+        <p>Loading, please wait...</p>
+        <div class="loading-bar"></div>
+      </div>
     </div>
 
     <footer class="footer">
@@ -180,6 +190,5 @@
       </div>
       <p class="copyright">© 2024 SomeCompany, Inc. All rights reserved.</p>
     </footer>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
