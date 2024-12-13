@@ -65,14 +65,9 @@ function showLoadingBar(event) {
             const progress = data.progress;
             loadingBarFill.style.width = `${progress}%`;
             if (progress >=100) {
+              pollForSolution();
               clearInterval(interval);
               
-              setTimeout(() => {
-                loadingBarContainer.style.display = "none";
-                resultsContainer.style.display = "block";
-                const sol = data.solution;
-                resultsContainer.textContent = `Your flight ticket for ${departure_date} will be ${sol}`;
-              }, 15000); // 3 seconds delay
             }
           })
           .catch(error => {
@@ -84,5 +79,30 @@ function showLoadingBar(event) {
     .catch(error => {
       console.error("Error starting task:", error);
     });
-}
+
+
+    function pollForSolution() {
+      const solutionInterval = setInterval(() => {
+        
+        fetch('/get_solution')
+          .then(response => response.json())
+          .then(data => {
+            const solution = data.solution;
+            
+            if (solution !== -1) {
+              clearInterval(solutionInterval);  
+              setTimeout(() => {
+                loadingBarContainer.style.display = "none";
+                resultsContainer.style.display = "block";
+                resultsContainer.textContent = `Your flight ticket for ${departure_date} will be ${solution}`;
+              }, 500); 
+            }
+          })
+          .catch(error => {
+            console.error("Error fetching solution:", error);
+            clearInterval(solutionInterval);  
+          });
+      }, 1000);  
+    }
+  }
 

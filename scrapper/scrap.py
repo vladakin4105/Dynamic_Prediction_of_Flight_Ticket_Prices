@@ -41,7 +41,7 @@ def progress_update(value):
 
 def solution_update(value):
      global solution
-     solution = value
+     solution = round(value,2)
 
 @app.route('/start_task', methods=['POST'])
 def start_task():
@@ -60,14 +60,20 @@ def start_task():
     progress=1
     return jsonify({"message": "Task started"})
 
-@app.route('/get_progress', methods=['GET'])
+@app.route('/get_progress', methods = ['GET'])
 def get_progress():
     global progress
-    global solution
     return jsonify({
-         "progress": progress,
-         "solution": solution
+         "progress": progress
                     })
+
+@app.route('/get_solution', methods = ['GET'])
+def get_solution():
+     global solution
+     return jsonify({
+         "solution": solution
+     })
+
 
 
 
