@@ -39,7 +39,7 @@ The **Dynamic Prediction of Flight Ticket Prices** project is a web application 
    ```
 4. Start the application:
    ```bash
-   Run python3 scrap.py,
+   python3 scrap.py
 then the application opens the front-end part of the app, and afterward, the other Python programs are executed.
 
 ## Usage
