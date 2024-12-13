@@ -48,3 +48,18 @@ then the application opens the front-end part of the app, and afterward, the oth
    - Origin, destination, and travel dates.
 3. Start the scanning process to fetch real-time flight prices.
 4. View the predicted price trends
+
+## Contact
+For questions or support, please contact:
+- **Name:** Vlad Popescu 
+- **Email:** [Your Email]
+- **GitHub:** [Your GitHub Profile]
+
+- **Name:** Madalina Ioana Palade 
+- **Email:** mdlpalade@gmail.com
+- **GitHub:** https://github.com/madalinapal
+
+- **Name:** Bicu David
+- **Email:** [Your Email]
+- **GitHub:** [Your GitHub Profile]
+
