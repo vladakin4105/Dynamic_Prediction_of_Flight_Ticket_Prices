@@ -51,15 +51,10 @@ then the application opens the front-end part of the app, and afterward, the oth
 
 ## Contact
 For questions or support, please contact:
-- **Name:** Vlad Popescu 
-- **Email:** [Your Email]
-- **GitHub:** [Your GitHub Profile]
+| Name                  | Email                  | GitHub                              |
+|-----------------------|------------------------|-------------------------------------|
+| Vlad Popescu          | [Your Email]          | [Your GitHub Profile]              |
+| Madalina Ioana Palade | mdlpalade@gmail.com   | [https://github.com/madalinapal](https://github.com/madalinapal) |
+| Bicu David            | [Your Email]          | [Your GitHub Profile]              |
 
-- **Name:** Madalina Ioana Palade 
-- **Email:** mdlpalade@gmail.com
-- **GitHub:** https://github.com/madalinapal
-
-- **Name:** Bicu David
-- **Email:** [Your Email]
-- **GitHub:** [Your GitHub Profile]
 
