@@ -19,7 +19,7 @@ The **Dynamic Prediction of Flight Ticket Prices** project is a web application 
   - Python
   - Web scraping with libraries like BeautifulSoup and Selenium
 - **Machine Learning:**
-  - Algorithms for price trend prediction (e.g., Linear Regression, Time Series Analysis) -- scrie aici algoritmul
+  - Algorithms for price trend prediction : Random Forest Regressor
   - Libraries such as scikit-learn and pandas
 - **Deployment:**
   - Flask for backend framework
@@ -53,8 +53,9 @@ then the application opens the front-end part of the app, and afterward, the oth
 For questions or support, please contact:
 | Name                  | Email                  | GitHub                              |
 |-----------------------|------------------------|-------------------------------------|
-| Vlad Popescu          | [Your Email]          | [Your GitHub Profile]              |
+| Vlad Popescu          | vldpopescu4105@yahoo.com          | https://github.com/vladakin4105              |
 | Madalina Ioana Palade | mdlpalade@gmail.com   | [https://github.com/madalinapal](https://github.com/madalinapal) |
-| Bicu David            | [Your Email]          | [Your GitHub Profile]              |
+| Bicu David            | davidmihaibicu@gmail.com          | https://github.com/davidmihaibicu              |
+
 
 
