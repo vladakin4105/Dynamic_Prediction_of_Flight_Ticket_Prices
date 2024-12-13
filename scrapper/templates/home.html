@@ -80,7 +80,7 @@
 
     <div class="data-container">
       <p>Please insert your travel details below:</p>
-      <form class="formular" onsubmit="showLoadingBar(event)">
+      <form id="Form" class="formular" onsubmit="showLoadingBar(event)">
         <div class="input">
           <label for="origin">From</label>
           <input type="text" id="origin" name="origin" required />
@@ -119,8 +119,14 @@
 
     <div class="loading-bar-container" id="loading-bar-container">
         <p>Loading, please wait...</p>
-        <div class="loading-bar"></div>
+        <div class="loading-bar" id="loading-bar">
+          <div class="loading-bar-fill"></div>
+        </div>
       </div>
+    </div>
+
+    <div class="results" id="results">
+      
     </div>
 
     <footer class="footer">

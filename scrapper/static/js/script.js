@@ -33,23 +33,56 @@ function sendMail() {
 
 function showLoadingBar(event) {
   event.preventDefault(); // Prevent form submission for demo purposes
-  document.querySelector(".formular").style.display = "none";
+  document.querySelector(".data-container").style.display = "none";
   const loadingBarContainer = document.getElementById("loading-bar-container");
-  const loadingPercentage = document.getElementById("loading-percentage");
+  const loadingBarFill = document.querySelector(".loading-bar-fill");
   loadingBarContainer.style.display = "block";
+  const resultsContainer = document.getElementById("results");
 
-  let progress = 0;
-  const interval = setInterval(() => {
-    if (progress >= 100) {
-      clearInterval(interval);
-      loadingPercentage.textContent = "Completed!";
-      // Simulate actual form submission or next steps
-      setTimeout(() => {
-        console.log("Form processing complete.");
-      }, 500);
-    } else {
-      progress += 1;
-      loadingPercentage.textContent = `${progress}%`;
-    }
-  }, 20);
+  // Collect input field values
+  const origin = document.getElementById("origin").value;
+  const destination = document.getElementById("destination").value;
+  const departure_date = document.getElementById("departure-date").value;
+
+  fetch('/start_task', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      origin: origin,
+      destination: destination,
+      departure_date: departure_date,
+    }),
+  })
+    .then(response => response.json())
+    .then(() => {
+      const interval = setInterval(() => {
+        // Fetch progress bar from server
+        fetch('/get_progress')
+          .then(response => response.json())
+          .then(data => {
+            const progress = data.progress;
+            loadingBarFill.style.width = `${progress}%`;
+            if (progress >=100) {
+              clearInterval(interval);
+              
+              setTimeout(() => {
+                loadingBarContainer.style.display = "none";
+                resultsContainer.style.display = "block";
+                const sol = data.solution;
+                resultsContainer.textContent = `Your flight ticket for ${departure_date} will be ${sol}`;
+              }, 15000); // 3 seconds delay
+            }
+          })
+          .catch(error => {
+            console.error("error fetching progress: ",error);
+            clearInterval(interval);
+          });
+      }, 1000);
+    })    
+    .catch(error => {
+      console.error("Error starting task:", error);
+    });
 }
+
