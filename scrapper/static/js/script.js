@@ -94,7 +94,7 @@ function showLoadingBar(event) {
               setTimeout(() => {
                 loadingBarContainer.style.display = "none";
                 resultsContainer.style.display = "block";
-                resultsContainer.textContent = `Your flight ticket for ${departure_date} will be ${solution}`;
+                resultsContainer.textContent = `Your flight ticket for ${departure_date} will be ${solution} RON`;
               }, 500); 
             }
           })
